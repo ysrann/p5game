@@ -1,0 +1,159 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 40px;
+  color: #6a1b9a;
+  text-shadow: 2px 2px #fff;
+  margin-bottom: 20px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 2px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fff3e0;
+  font-weight: bold;
+  color: #424242;
+}
+
+.cell:nth-child(even) {
+  background-color: #ffe0b2;
+}
+
+.cell.question {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.pion {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 3px #000;
+}
+
+.pion.player1 {
+  background-color: red;
+  top: 5px;
+  left: 5px;
+}
+
+.pion.player2 {
+  background-color: gold;
+  bottom: 5px;
+  right: 5px;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#dice-display {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1e88e5;
+  background: #bbdefb;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+#rollDice {
+  padding: 10px 25px;
+  font-size: 18px;
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#rollDice:hover {
+  background-color: #f4511e;
+}
+
+#turnDisplay {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4e342e;
+}
+
+.red {
+  color: red;
+}
+
+#question-box {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: white;
+  border: 3px solid #009688;
+  padding: 20px 30px;
+  z-index: 10;
+  text-align: center;
+  display: none;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+#question-box.show {
+  display: block;
+}
+
+#question-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+#answers button {
+  display: block;
+  margin: 8px auto;
+  padding: 10px 15px;
+  background-color: #80deea;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#answers button:hover {
+  background-color: #4dd0e1;
+}
+
+#timer {
+  font-weight: bold;
+  color: red;
+  margin-top: 15px;
+  font-size: 20px;
+}
